@@ -1,0 +1,83 @@
+@use '../base/_colorscheme' as c
+@use '../base/_responsive-sizing' as res
+
+$side-padding: calc(res.$default-padding / 2)
+$vertical-padding: res.$default-padding
+
+@mixin background-gradient($angle)
+    background: linear-gradient($angle,  #424b5d 9%, #434c5e 35%, #3b4252 50%, #2e3440 84%)
+ 
+
+#About
+    // @include background-gradient(90deg)
+    overflow: hidden
+    // padding: $vertical-padding $side-padding $vertical-padding $side-padding
+    padding: $vertical-padding
+    // background-color: c.$secondary-color
+    // background: rgb(67,76,94);
+    // background: linear-gradient(313deg, rgba(67,76,94,1) 22%, rgba(66,75,93,1) 24%, rgba(46,52,64,1) 84%)
+    background: c.$secondary-color
+    color: c.$primary-color
+    text-align: justify
+    position: relative
+    align-items: center
+    // flex-wrap: wrap
+
+    #animate-description
+        z-index: 0
+    #animate-profile
+        z-index: 1
+
+#About-description
+    z-index: 0
+    background-color: c.$secondary-color-3
+    align-items: center
+    justify-content: center
+    // flex-wrap: wrap
+        // padding-top: $vertical-padding
+    & .card-title
+        align-self: flex-start
+
+#About-profile
+    align-items: center
+    justify-content: center
+    padding: 0
+    z-index: 5
+    
+    .profile-container
+            
+            width: 30vw
+            height: 30vw
+            // position: absolute
+            // top: -1.5vw
+            // left: 50%
+            // transform: translateX(-50%) translateY(-50%)
+            
+            
+
+            & img
+                // align-self: center
+                z-index: 1000
+                width: 100%
+                object-fit: contain
+                border-radius: 10px
+                border: 5px solid c.$primary-color
+                box-shadow: 0 0 10px rgba(136, 192, 208, 0.5)
+
+.section-separator
+    height: 5vh
+
+/* Phone portrait mode*/
+// TODO use mixins
+@media only screen and (max-device-width: 700px)
+    #About
+        flex-direction: column
+        padding: $side-padding
+        // @include background-gradient(0deg)
+
+@media (max-width: 700px)
+    #About
+        flex-direction: column
+        padding: $side-padding
+        // @include background-gradient(0deg)
+    

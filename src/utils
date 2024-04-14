@@ -1,0 +1,152 @@
+    // Define refs for scrolling to sections
+    // const sectionRefs = {
+    //     aboutRef: useRef(null),
+    //     projectsRef: useRef(null),
+    // };
+
+    // const scrollToSection = (sectionId) => {
+    //     const sectionRef = sectionRefs[sectionId];
+    //     if (sectionRef && sectionRef.current) {
+    //     sectionRef.current.scrollIntoView({ 
+    //         behavior: 'smooth',
+    //         block: 'start',
+    //     });
+    //     }
+    // };
+
+    // Check if using mobile
+    // const [isMobile, setIsMobile] = useState(false);
+
+    // useEffect(() => {
+    //     const mediaQuery = window.matchMedia('(max-width: 700px)');
+    //     const handleResize = (event) => {
+    //     setIsMobile(event.matches);
+    //     };
+    //     handleResize(mediaQuery);
+    //     mediaQuery.addEventListener('change', handleResize);
+    //     return () => {
+    //     mediaQuery.removeEventListener('change', handleResize);
+    //     };
+    // }, []);
+
+    // Dont use snapscrolling
+    // if (isMobile){
+    //     return(
+    //     <>
+    //         <NavigationBar scrollToSection = {scrollToSection} /> 
+    //         <AboutSection ref = {sectionRefs.aboutRef} />
+    //         {/* <Projects ref = {sectionRefs.projectsRef} />     */}
+    //         {/* <Footer /> */}
+    //     </>
+    //     );
+        
+    // }
+    //Render all sections as snap scrollable sections
+
+        // const [scrollPos, setScrollPos] = useState(0);
+    // const [heroHeight, setHeroHeight] = useState(0);
+
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //     const position = window.scrollY;
+    //     setScrollPos(position);
+    //     };
+
+    //     const handleResize = () => {
+    //     const height = document.querySelector('.hero')?.offsetHeight;
+    //     setHeroHeight(height || 0);
+    //     };
+
+    //     window.addEventListener('scroll', handleScroll);
+    //     window.addEventListener('resize', handleResize);
+    //     handleResize(); // Initial call to set hero height
+
+    //     return () => {
+    //     window.removeEventListener('scroll', handleScroll);
+    //     window.removeEventListener('resize', handleResize);
+    //     };
+    // }, []);
+
+    // const opacity = 1 - (scrollPos / heroHeight);
+
+// TODO fix Ipad portrait navigation bar vanishing
+// Too lazy to fix IPad portrait css so check if using Ipad and in portait mode
+// function IpadPortraitWarning(){
+
+//   const [isIPad, setIsIPad] = useState(false);
+
+//   useEffect(() => {
+//     const userAgent = navigator.userAgent.toLowerCase();
+//     setIsIPad(userAgent.includes('ipad'));
+//   }, []);
+
+//   const [isPortrait, setIsPortrait] = useState(false);
+
+//   useEffect(() => {
+//     const updateOrientation = () => {
+//       setIsPortrait(window.innerHeight > window.innerWidth);
+//     };
+
+//     updateOrientation();
+
+//     window.addEventListener('resize', updateOrientation);
+
+//     return () => {
+//       window.removeEventListener('resize', updateOrientation);
+//     };
+//   }, []);
+//   return(
+//     <>
+//       {(isIPad && isPortrait) && (
+//         <div style={{ marginTop: '5vh',backgroundColor: 'yellow', fontSize:'smaller'}}>
+//           <p>You are using an iPad in portrait mode. Some features may not be fully optimized for this device.</p>
+//         </div>
+//       )} 
+//     </>
+//   );
+// }
+// import React, { useState, useEffect } from 'react';
+// import './styles/main.sass'; // Assuming you have your styles in App.css
+
+// function App() {
+//   const [scrollPos, setScrollPos] = useState(0);
+//   const [heroHeight, setHeroHeight] = useState(0);
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const position = window.scrollY;
+//       setScrollPos(position);
+//     };
+
+//     const handleResize = () => {
+//       const height = document.querySelector('.hero')?.offsetHeight;
+//       setHeroHeight(height || 0);
+//     };
+
+//     window.addEventListener('scroll', handleScroll);
+//     window.addEventListener('resize', handleResize);
+//     handleResize(); // Initial call to set hero height
+
+//     return () => {
+//       window.removeEventListener('scroll', handleScroll);
+//       window.removeEventListener('resize', handleResize);
+//     };
+//   }, []);
+
+//   const opacity = 1 - (scrollPos / heroHeight);
+
+//   return (
+//     <div className="App">
+//       <div className="hero" style={{ opacity, backgroundColor:'grey'}}>
+//         <h1>Your Hero Content</h1>
+//         <p>This is your hero section content.</p>
+//       </div>
+//       <div className="content">
+//         {/* Your main content goes here */}
+//         <div style={{ height: '2000px' }}>Scrollable Content</div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;

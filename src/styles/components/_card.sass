@@ -1,0 +1,27 @@
+@use '../base/_responsive-sizing' as res
+@use '../base/_colorscheme' as c
+
+.card
+    background-color: c.$secondary-color-2
+    color: c.$white
+    padding: res.$default-padding
+    // margin: 0 1em 0 1em
+    border-radius: calc(0.3 * 1em)
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)
+    // text-align: justify
+
+    .card-title
+        align-items: center
+        color: c.$primary-color
+
+        span
+            color: c.$white
+    
+    b
+        color: c.$primary-color
+    
+    a
+        color: c.$primary-color
+    
+
+    

@@ -1,0 +1,96 @@
+@use '../base/_responsive-sizing' as s
+@use '../base/_colorscheme' as c
+
+.hero
+    height: 100vh
+    width: 100vw
+    animation: clip-hero-anim 1.25s cubic-bezier(0.29, 0.8, 0.8, 0.98)
+    will-change: clip-path
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+    color: c.$white
+    font-family: Poppins
+    font-weight: 500
+    // background-image: url("https://source.unsplash.com/mhS1fcL396w")
+    // background-image:  url('../../assets/polina-kuzovkova-txb2Pvl6zWs-unsplash.jpg')
+    background-repeat: no-repeat
+    background-size: cover
+    position: relative
+    overflow: hidden
+
+    .hero-bg
+        position: absolute
+        z-index: -1
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        overflow: hidden
+        background-image:  url('../../assets/polina-kuzovkova-txb2Pvl6zWs-unsplash.jpg')
+        background-size: cover
+        background-position: center
+        will-change: opacity
+        // animation: fade-in 0.5s linear
+        animation: scaling-hero-anim 4s 0.25s cubic-bezier(0, 0.71, 0.4, 0.97) forwards
+        will-change: transform
+        
+        img
+            border: 10px solid red
+            width: 100vw
+            object-fit: contain
+            animation: scaling-hero-anim 2s 0.25s cubic-bezier(0, 0.71, 0.4, 0.97) forwards
+            will-change: transform
+    
+    .hero-title
+        padding: s.$default-padding
+        z-index: 1
+        opacity: 0
+        animation: fade-in 0.5s 1.5s linear forwards
+
+        & h1
+            font-size: 5em
+            text-align: center
+        & h5
+            text-align: center
+            opacity: 0
+            animation: fade-in 0.5s 2s linear forwards
+
+        & svg
+            box-shadow: inset rgba(0, 0, 0, 0.3)
+
+        // & svg:hover
+        //     transform: translateY(-10px)
+        
+
+    .contacts
+        z-index: 1
+        opacity: 0
+        animation: fade-in 0.5s 2.5s linear forwards
+
+// Animation
+@keyframes fade-in 
+    from 
+        opacity: 0
+    to 
+        opacity: 1
+
+@keyframes fade-in-partial
+    from 
+        opacity: 0
+    to
+        opacity: 0.4
+  
+
+@keyframes scaling-hero-anim 
+    from 
+        transform: scale(1.25)
+    to 
+        transform: scale(1.1)
+  
+
+@keyframes clip-hero-anim 
+    from 
+        clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%)
+    to 
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
+  
+

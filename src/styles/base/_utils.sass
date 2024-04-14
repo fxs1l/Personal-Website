@@ -1,0 +1,41 @@
+// Describes styling for utility classes
+@import 'buttons'
+
+.pointer-hover
+    cursor: pointer
+
+.snap-scroller-x
+    overflow-x: auto
+    overscroll-behavior-x: auto
+    scroll-snap-type: x mandatory
+    -ms-overflow-style: auto
+    scrollbar-width: none
+    &::-webkit-scrollbar
+        display: none
+
+.snap-scroller-y
+    overflow-y: auto
+    overscroll-behavior-y: auto
+    scroll-snap-type: y mandatory
+    -ms-overflow-style: auto
+    scrollbar-width: none
+    &::-webkit-scrollbar
+        display: none
+
+.scroll-snap-align-start
+    scroll-snap-align: start
+
+.scroll-snap-align-center
+    scroll-snap-align: center
+
+.flex-row-centered
+    display: flex
+    align-items: center
+    justify-content: center
+
+
+.flex-column-centered
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center

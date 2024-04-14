@@ -1,0 +1,45 @@
+// Base styling
+@import 'base/_base'
+@import 'base/colorscheme'
+@import 'base/utils'
+@import 'base/layouts'
+
+
+// Sections styling
+@import 'sections/_hero'
+@import 'sections/_navigation-bar'
+@import 'sections/_about'
+@import 'sections/_projects'
+@import 'sections/_skills'
+@import 'sections/_footer'
+@import 'sections/_section_separator'
+
+// Components
+@import 'components/_card'
+@import 'components/_material-symbols'
+@import 'components/_snappable_section'
+@import 'components/_svg-button'
+@import 'components/_contacts'
+@import 'components/_bouncing-arrow'
+@import 'components/_gameboy'
+@import 'components/_project_gallery'
+
+// Responsive styling
+@import 'base/responsive-sizing'
+
+.container 
+  overflow: hidden /* Ensure no overflow on the container */
+  padding-top: 20px /* Add padding instead of margin to create space */
+
+
+.content 
+  overflow-y: scroll /* Enable vertical scrolling */
+  height: 200vh /* Example height */
+
+
+/* Add margin to the content */
+.content > * 
+  margin-top: 20px /* Adjust as needed */
+
+
+

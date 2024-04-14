@@ -1,0 +1,117 @@
+@use '../base/_colorscheme' as c
+
+.sidebar
+    height: 100%
+    width: 100%
+    overflow-x: hidden
+    overflow-y: scroll
+
+    .sidebar-content
+        
+        word-wrap: break-word
+        ul
+            list-style-type: none
+
+            li
+                font-size: 20px
+                font-weight: 700
+                padding:  0 20px 10px 0
+                color: c.$secondary-color-4
+                cursor: pointer
+        h3, h4
+            color: c.$secondary-color-2
+            padding-left: 20px
+
+        .bg-focused
+            background-color: c.$primary-color-2
+            color: c.$white
+
+    .sidebar-content.hidden
+        width: 0
+        height: 0
+        overflow: hidden
+        display: none
+
+    .selected-project
+        width: 100%
+        height: 100%
+        overflow: hidden
+        // max-height: 100%
+
+        .project-container
+            width: 100%
+            height: 100%
+            position: relative
+
+            .details-overlay.hover
+                bottom: 0
+                height: 100%
+
+            a 
+                text-decoration: none
+
+            .details-overlay
+                position: absolute
+                bottom: 100%
+                left: 0
+                right: 0
+                // transform: scale(0)
+                transition: .3s ease
+                opacity: 1
+                background-color: c.$secondary-color
+                color: c.$white
+                text-align: justify
+                
+                h1
+                    text-align: center
+                    color: c.$white
+                    background-color: c.$primary-color-2
+                    border-radius: 5px
+
+                a 
+                    background-color: c.$secondary-color-2
+                    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2)
+                    color: c.$gold
+                    padding: 5px
+                    border: 1px solid c.$white
+                    border-radius: 5px
+
+                p, h1, h4, .skill-array, a
+                    opacity: 0.9
+                    margin: 15px
+
+                h4
+                    font-weight: 100
+                    
+                
+                .skill-array
+                    border-top: 2px solid white
+                    // border-radius: 5px
+                    display: flex
+                    flex-wrap: wrap
+                    align-items: flex-start
+                    height: fit-content
+
+                .skill-tab
+                    background-color: c.$primary-color-2
+                    color: white
+                    padding: 5px 5px 5px 5px
+                    border-radius: 5px
+                    margin-right: 5px
+                    margin-bottom: 5px
+                    margin-top: 5px
+                    font-size: smaller
+
+            .project-media
+                width: 100%
+                height: 100%
+                display: flex
+                color: c.$secondary-color
+                
+                img
+                    width: 95%
+                    height: auto
+                    padding: 10px
+                    object-fit: contain
+        
+    

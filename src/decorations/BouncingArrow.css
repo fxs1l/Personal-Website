@@ -1,0 +1,37 @@
+/* BouncingArrow.css */
+.arrow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10; 
+  }
+  
+  .arrow {
+    width: 30px; 
+    height: 50px; 
+    position: relative;
+  }
+  
+  .arrow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #8FBCBB; /* Color of the arrow */
+    transform: translateX(-50%);
+    animation: bounce 350ms 5 alternate; /* Animation */
+  }
+  
+  @keyframes bounce {
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    0% {
+      transform: translateX(-50%) translateY(10px); /* Adjust the distance of bounce */
+    }
+  }
+  
