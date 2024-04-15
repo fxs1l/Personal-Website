@@ -21,6 +21,14 @@ function AboutMeText(){
             <br/><br/>
             Feel free to contact me if you have any questions or would like me to work on a project.
             <br/> <br/>
+            <a 
+                href = '/static/media/resume.pdf' 
+                role = 'button' 
+                target = '_self' 
+                rel = 'noopener noreferrer'
+            >
+                View Resume
+            </a>
             {/* <Contacts /> */}
         </p>
     );
