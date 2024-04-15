@@ -155,7 +155,7 @@ function GameBrand(){
 }
 
 function Instructions() {
-    const state = useGameStates()
+    // const state = useGameStates()
 
     return (
         <Card id = 'instructions' >
@@ -191,6 +191,13 @@ export default function Gameboy(){
             >
                 <GameProvider>
                     { /* TODO fix Instructions also being rendered */}
+                    
+                    <LazyAnimation
+                        id = 'animate-instructions'
+                        animationStyle = 'animate__bounceInRight'
+                    >
+                        <Instructions />
+                    </LazyAnimation>
                     <container class='flex-container-centered column'>
                         <LazyAnimation 
                             id = 'animate-game'
@@ -201,12 +208,6 @@ export default function Gameboy(){
                             <GameControls/>
                         </LazyAnimation>
                     </container>
-                    <LazyAnimation
-                        id = 'animate-instructions'
-                        animationStyle = 'animate__bounceInRight'
-                    >
-                        <Instructions />
-                    </LazyAnimation>
                 </GameProvider>
             </Card>
         </>

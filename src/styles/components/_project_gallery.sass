@@ -5,8 +5,13 @@
     width: 100%
     overflow-x: hidden
     overflow-y: scroll
+    &::-webkit-scrollbar
+        display: none
 
     .sidebar-content
+        &::-webkit-scrollbar
+            display: none
+            overflow-x: hidden
         
         word-wrap: break-word
         ul
@@ -36,12 +41,18 @@
         width: 100%
         height: 100%
         overflow: hidden
+
+        &::-webkit-scrollbar
+            display: none
         // max-height: 100%
 
         .project-container
             width: 100%
             height: 100%
             position: relative
+
+            &::-webkit-scrollbar
+                display: none
 
             .details-overlay.hover
                 bottom: 0
@@ -107,6 +118,9 @@
                 height: 100%
                 display: flex
                 color: c.$secondary-color
+
+                &::-webkit-scrollbar
+                    display: none
                 
                 img
                     width: 95%

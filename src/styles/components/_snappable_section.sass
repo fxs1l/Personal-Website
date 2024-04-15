@@ -1,7 +1,11 @@
 .snappable-container
     height: 100vh
     overflow-y: auto
+    overflow-x: hidden
     scroll-snap-type: y mandatory
+    
+    &::-webkit-scrollbar
+        display: none
     
 .snappable-content
     width: 100%
