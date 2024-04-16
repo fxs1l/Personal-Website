@@ -20,7 +20,7 @@ function ProjectSkills({skills}){
 }
 // ------------------------------- // 
 
-function Project(props){
+export function Project(props){
     const alt = 'Loading ' + props.title + '...'
 
     const dispatch = useGameDispatch();
@@ -88,8 +88,9 @@ function ProjectSelector(){
     const state = useGameStates();
     const dispatch = useGameDispatch();
 
-    const handleListItemClick = (choice) => {
+    const handleListItemClick = (choice, index) => {
         dispatch({type: 'select_item', payload: choice})
+        dispatch({type: 'set_index', payload: index})
     }
 
     return(
@@ -104,7 +105,7 @@ function ProjectSelector(){
                     key = {index}
                     className = {`animate__flash animate__infinite animate__slow ${index === state.focusedIndex ? 'animate__animated bg-focused' : ''}`}
                     onClick = {() => 
-                        handleListItemClick(project.setIndex)
+                        handleListItemClick(project.setIndex, index)
                     }
                 >
                     {project.funProgramName} 
@@ -144,31 +145,16 @@ function ProjectGallery() {
                 <>
                 {/* // <Scroller> */}
                     <div className="selected-project">
-                        {state.selectedProject === 'aso' &&
-                            <Project 
-                                title = {state.projects[0].details.title} 
-                                link = {state.projects[0].details.link} 
-                                media = {state.projects[0].details.media} 
-                                desc = {state.projects[0].details.desc} 
-                                skills = {state.projects[0].details.skills}
+                        {state.selectedProject !== '' &&
+                            <Project
+                                title = {state.projects[state.focusedIndex].details.title}
+                                link = {state.projects[state.focusedIndex].details.link}
+                                media = {state.projects[state.focusedIndex].details.media} 
+                                desc = {state.projects[state.focusedIndex].details.desc} 
+                                skills = {state.projects[state.focusedIndex].details.skills}
+
                             />
-                        } 
-                        {state.selectedProject === 'buoywatch' && 
-                            <Project 
-                                title = {state.projects[1].details.title} 
-                                link = {state.projects[1].details.link} 
-                                media = {state.projects[1].details.media} 
-                                desc = {state.projects[1].details.desc} 
-                                skills = {state.projects[1].details.skills}
-                            />
-                        } 
-                        {state.selectedProject === 'hayahay' && 
-                            <Project 
-                                title = {state.projects[2].details.title} 
-                                link = {state.projects[2].details.link} 
-                                media = {state.projects[2].details.media} 
-                                desc = {state.projects[2].details.desc} 
-                                skills = {state.projects[2].details.skills}/>
+                            
                         }
                     </div> 
                 {/* // </Scroller> */}

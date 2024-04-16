@@ -1,5 +1,5 @@
 // Nintendo don't come for me
-
+// Also, yes I think this is terrible UX design
 import {useGameDispatch, GameProvider, useGameStates} from './GameContext';
 // import { useHistory } from 'react-router-dom';
 import ProjectGallery from './ProjectGallery';
@@ -123,6 +123,7 @@ function GameControls({speakerLines=3,}){
         
     )
 }
+
 function GameScreen(){
     return(
         <div class = 'game-screen-container flex-container column' >
@@ -170,9 +171,19 @@ function Instructions() {
             <br /> <br />
             {/* Just <b>swipe/scroll</b> the game screen <b> horizontally </b> to browse my projects or click on the selection screen. */}
             {/* <br /> <br /> */}
-            Go old school and use the <b> A or B buttons </b> to <b> select/deselect </b> and the <b> D-pad buttons </b> for movement.
-            
+            Go old school and use the:
+            </p> 
+            <p class = 'button-info'>
+                <span class='ab-span'> A </span> button to <b>select</b> a project. Then use the <span class='ab-span'> A </span> button again (or <b> hover over</b> ) to view the project <b> details.</b>
             </p>
+            <p class = 'button-info'>
+                <span class='ab-span'> B </span> to go back to the <b>selection</b> screen.
+            </p>
+            <p class = 'button-info'>
+                
+            <span class='dpad-span'> Direction-Pad </span> to go through projects.
+            </p>
+            
             
             </div>
         </Card>
@@ -184,17 +195,17 @@ function Instructions() {
 export default function Gameboy(){
 
     return (
-        <>
+        <GameProvider>
             <Card 
                 id = 'gameboy' 
                 className = ''
             >
-                <GameProvider>
+                
                     { /* TODO fix Instructions also being rendered */}
                     
                     <LazyAnimation
                         id = 'animate-instructions'
-                        animationStyle = 'animate__bounceInRight'
+                        animationStyle = 'animate__bounceInLeft'
                     >
                         <Instructions />
                     </LazyAnimation>
@@ -208,9 +219,8 @@ export default function Gameboy(){
                             <GameControls/>
                         </LazyAnimation>
                     </container>
-                </GameProvider>
             </Card>
-        </>
+        </GameProvider>
     );
 }
 

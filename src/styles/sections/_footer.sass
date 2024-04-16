@@ -3,7 +3,7 @@ footer
     display: flex
     align-items: center
     // flex-wrap: wrap
-    justify-content: space-around
+    justify-content: space-between
     background-color: c.$secondary-color-2
     color: c.$white-2
     
@@ -12,9 +12,13 @@ footer
         color: inherit
         justify-self: center
 
+    & .copyright
+        margin: 5px
+        padding: 10px
     & .contacts
         font-size: 12px
         padding: 10px
+        margin: 5px
 
 @media (max-width: 700px)
     footer

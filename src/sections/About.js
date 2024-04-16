@@ -7,11 +7,11 @@ import LazyAnimation from '../components/LazyAnimation';
 // import SnappableSection from '../components/SnappableSection';
 
 function AboutMeText(){
-    const universityUrl = 'https://upd/edu.ph'
+    const universityUrl = 'https://upd.edu.ph'
     return(
         <p> 
-            I am a third year undergraduate student in <b> Electronics Engineering </b> at the <b> 
-            <a href = {universityUrl} > University of Philippines - Diliman</a></b>.
+            I am a third year undergraduate student in <b> Electronics Engineering </b> at the 
+            <b> <a href = {universityUrl} > University of Philippines - Diliman</a> </b>.
             Currently, I am actively seeking internships while engaging 
             in self-learning efforts to enter the tech industry, with a particular focus on data science and software development.
             <br/><br/>

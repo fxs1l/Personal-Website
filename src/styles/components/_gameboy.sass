@@ -6,19 +6,22 @@
     font-family: Pixelify Sans
     padding: 0 0 10px 0
     overflow: hidden
+    // flex-wrap: wrap
 
 
     & container
         background-color: inherit
 
     #animate-game
-        align-self: center
+        // flex-grow: 1
+        // align-self: stretch
         margin: 0 10px 0 10px
         border: 5px solid c.$secondary-color-4
         border-radius: 10px
     
     #animate-instructions
         align-self: center
+        // flex-shrink: 3
 
 #instructions
     align-self: stretch
@@ -26,11 +29,18 @@
     background-color: c.$secondary-color
     color: c.$primary-color
 
-    b
-        color: c.$pink
+    .ab-span
+        color: c.$error-color
+    .dpad-span
+        color: c.$gold
+    
+    .button-info
+        padding-left: 10px
 
     .instructions 
-        // align-self: center
+        // align-self: stretch
+        b
+            color: c.$pink
         p
             font-size:  calc(res.$body-font-size + 2px)
             text-align: justify
@@ -205,7 +215,7 @@
     #instructions
         // flex-grow: 0
 
-@media (max-width: 700px)
+@media (max-width: 900px)
     #gameboy
         flex-direction: column
         padding: 0 

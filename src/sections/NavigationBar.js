@@ -3,12 +3,15 @@ import { useState, useEffect } from 'react'
 
 
 function NavigationMenu({scrollToSection}) {
-    const [showMenu, setShowMenu] = useState(false);
+    // setting the showMenu wasn't working in CSS 
+    // Todo reimplement in css?
+    const [showMenu, setShowMenu] = useState(window.innerWidth > 900); 
 
     const toggleNavItems = () => {
         setShowMenu(!showMenu);
     }
 
+    // eslint-disable-next-line
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     const handleResize = () => {
@@ -23,8 +26,6 @@ function NavigationMenu({scrollToSection}) {
         window.removeEventListener('resize', handleResize);
         };
     }, []); 
-
-    // const isMobile = useMediaQuery
 
     const items  = [
         {id: 0, name: 'about', link: '#/', isPage: false},

@@ -5,6 +5,16 @@
     background-color: c.$secondary-color
     color: c.$white
     overflow-y: scroll
-    padding: calc(res.$default-padding / 2)
+    padding: res.$default-padding
+    gap: 10px
+
+
     &::-webkit-scrollbar
         display: none
+
+    // #Featured
+    //     justify-content: self
+
+@media only screen and (max-device-width: 700px)
+    #Projects
+        padding: calc(res.$default-padding / 2)

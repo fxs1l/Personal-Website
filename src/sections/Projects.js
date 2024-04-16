@@ -1,7 +1,6 @@
 import { forwardRef } from "react"
 
-import Gameboy from "../components/HandheldConsole/Gameboy"
-
+import Gameboy from '../components/HandheldConsole/Gameboy'
 
 const Projects = forwardRef((_, ref) => {
     return (
@@ -9,6 +8,7 @@ const Projects = forwardRef((_, ref) => {
             id = 'Projects'
             className = 'flex-container column'
         >
+            {/* Implement featured projects*/}
             <Gameboy />
         </section>
     );

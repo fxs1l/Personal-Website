@@ -18,6 +18,21 @@
     position: relative
     overflow: hidden
 
+    .view-resume-button
+        margin-top: 50px
+        backdrop-filter: blur(16px)
+        background: none
+        padding: 5px
+        border-radius: 25px
+        border: 2px solid c.$gold
+        font-size: 0.6em
+        opacity: 0
+        animation: fade-in 0.5s 2.5s linear forwards
+        & a
+            text-decoration: none
+            color: c.$white
+
+
     .hero-bg
         position: absolute
         z-index: -1

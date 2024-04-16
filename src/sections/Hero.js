@@ -1,7 +1,7 @@
 // import { useState, useEffect } from 'react';
 
 import Contacts from '../components/Contacts';
-import BouncingArrow from '../decorations/BouncingArrow'
+// import BouncingArrow from '../decorations/BouncingArrow'
 // import backgroundSrc from '../assets/polina-kuzovkova-txb2Pvl6zWs-unsplash.jpg'
 
 function HeroTitle(){
@@ -31,8 +31,10 @@ export default function Hero({opacity}){
         >
             <HeroBackgroundImage />
             <HeroTitle />
+            
             <Contacts />
-            <BouncingArrow />
+            {/* <ViewResumeButton /> */}
+            
         </section>
     );
 }

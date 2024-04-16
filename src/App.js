@@ -34,7 +34,6 @@ export default function App(){
     return(
         <>
             <div class = 'snappable-container' > 
-                {/* <StickyNavBar></StickyNavBar> */}
                 <NavigationBar scrollToSection = {scrollToSection}></NavigationBar>
                 <SnappableSection >
                     <Hero opacity/>
