@@ -1,41 +1,43 @@
 import { useState, useEffect, useRef } from "react";
 
-export function AnimateOnVisible({animation, animationStyle='', children}){
-    const [isVisible, setIsVisible] = useState(false);
-    const ref = useRef(null); 
+export function AnimateOnVisible({ animation, animationStyle = "", children }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-        ([entry]) => {
-            setIsVisible(entry.isIntersecting);
-        },
-        {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.5, 
-        }
-        );
-        const currentRef= ref.current
-        if (currentRef) {
-            observer.observer(currentRef);
-        }
-
-        return () => {
-            if (currentRef) {
-                observer.unobserve(currentRef);
-            }
-        };
-    }, []);
-    //
-    return(
-        <div class={`${isVisible ? 'animate__animated' : ''} ${animation} ${animationStyle} `}>
-            {isVisible && children}
-        </div>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5,
+      },
     );
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observer(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+  //
+  return (
+    <div
+      class={`${isVisible ? "animate__animated" : ""} ${animation} ${animationStyle} `}
+    >
+      {isVisible && children}
+    </div>
+  );
 }
 
 // const [isVisible, setIsVisible] = useState(false);
-// // const ref = useRef(null); 
+// // const ref = useRef(null);
 
 // useEffect(() => {
 //     const observer = new IntersectionObserver(

@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-export default function OnHover({children}) {
-    const [isShown, setIsShown] = useState(false);
+export default function OnHover({ children }) {
+  const [isShown, setIsShown] = useState(false);
 
-    return (
+  return (
     <div className="App">
-      {isShown && (
-        <div>
-          I'll appear when you hover over the button.
-        </div>
-      )}
+      {isShown && <div>I'll appear when you hover over the button.</div>}
     </div>
   );
 }
