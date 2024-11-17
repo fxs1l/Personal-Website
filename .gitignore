@@ -26,6 +26,4 @@ yarn-error.log*
 firebase.json
 .firebase
 .firebaserc
-package-lock.json
-package.json
 .github
