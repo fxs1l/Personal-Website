@@ -11,40 +11,45 @@ import Footer from "./sections/Footer";
 import SnappableSection from "./components/SnappableSection";
 import SectionSeparator from "./sections/SectionSeparator";
 import NavigationBar from "./sections/NavigationBar";
+import DeprecatedBanner from "./components/Banner/Banner";
 
 export default function App() {
-  // Define refs for scrolling to sections
-  const sectionRefs = {
-    aboutRef: useRef(null),
-    projectsRef: useRef(null),
-    skillsRef: useRef(null),
-  };
+    // Define refs for scrolling to sections
+    const sectionRefs = {
+        aboutRef: useRef(null),
+        projectsRef: useRef(null),
+        skillsRef: useRef(null),
+    };
 
-  const scrollToSection = (sectionId) => {
-    const sectionRef = sectionRefs[sectionId];
-    if (sectionRef?.current) {
-      sectionRef.current.scrollIntoView({
-        behavior: "smooth",
-        // block: 'start',
-      });
-    }
-  };
-  return (
-    <div className="snappable-container">
-      <NavigationBar scrollToSection={scrollToSection}></NavigationBar>
-      <SnappableSection>
-        <Hero opacity />
-      </SnappableSection>
-      <SnappableSection>
-        <SectionSeparator title="About" ref={sectionRefs.aboutRef} />
-        <About />
-        <SectionSeparator title="Projects" ref={sectionRefs.projectsRef} />
-        <Projects />
-        <SectionSeparator title="Skills" ref={sectionRefs.skillsRef} />
-        <Skills />
-        <SectionSeparator />
-        <Footer />
-      </SnappableSection>
-    </div>
-  );
+    const scrollToSection = (sectionId) => {
+        const sectionRef = sectionRefs[sectionId];
+        if (sectionRef?.current) {
+            sectionRef.current.scrollIntoView({
+                behavior: "smooth",
+                // block: 'start',
+            });
+        }
+    };
+    return (
+        <div className="snappable-container">
+            <DeprecatedBanner />
+            <NavigationBar scrollToSection={scrollToSection}></NavigationBar>
+            <SnappableSection>
+                <Hero opacity />
+            </SnappableSection>
+            <SnappableSection>
+                <SectionSeparator title="About" ref={sectionRefs.aboutRef} />
+                <About />
+                <SectionSeparator
+                    title="Projects"
+                    ref={sectionRefs.projectsRef}
+                />
+                <Projects />
+                <SectionSeparator title="Skills" ref={sectionRefs.skillsRef} />
+                <Skills />
+                <SectionSeparator />
+                <Footer />
+            </SnappableSection>
+        </div>
+    );
 }
